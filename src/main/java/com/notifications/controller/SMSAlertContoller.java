@@ -30,6 +30,7 @@ public class SMSAlertContoller {
 	 * @param smsAlertBody
 	 * @return - generic response
 	 */
+	@SuppressWarnings("unchecked")
 	@PostMapping("/sms")
 	public DentalClinicsResponse<SmsAlertBody> sendSms(@RequestBody SmsAlertBody smsAlertBody) {
 		SmsAlertBody response = sMSAlertService.sendAlertSms(smsAlertBody);

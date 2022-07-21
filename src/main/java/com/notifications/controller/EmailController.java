@@ -34,6 +34,7 @@ public class EmailController {
 	 * @param userEmail
 	 * @return - generic response
 	 */
+	@SuppressWarnings("unchecked")
 	@PostMapping(value = "/textemail", consumes = "application/json", produces = "application/json")
 	public DentalClinicsResponse<EmailTemplate> sendEmail(@RequestBody EmailTemplate emailTemplate) {
 		EmailTemplate response = emailService.sendTextEmail(emailTemplate);
@@ -48,9 +49,9 @@ public class EmailController {
 	 * @param userEmail
 	 * @return - generic response
 	 */
+	@SuppressWarnings("unchecked")
 	@PostMapping(value = "/attachemail", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,
 			MediaType.APPLICATION_JSON_VALUE })
-
 	public DentalClinicsResponse<EmailTemplate> sendEmailWithAttachment(@RequestPart(value = "file") MultipartFile file,
 			@RequestParam("sendTo") String sendTo, @RequestParam("subject") String subject,
 			@RequestParam("body") String body) {
