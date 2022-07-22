@@ -1,5 +1,7 @@
 package com.notifications.services.Impl;
 
+import java.util.List;
+
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,8 @@ import com.google.firebase.messaging.Notification;
 import com.notifications.entity.Note;
 import com.notifications.enums.ErrorCode;
 import com.notifications.exception.DCException;
+import com.notifications.request.dto.SubscriptionRequestDto;
+import com.notifications.request.dto.TopicNotificationRequestDto;
 import com.notifications.serivices.FirebaseMessagingService;
 import com.notifications.utility.ConstantsDC;
 
@@ -48,4 +52,29 @@ public class FirebaseMessagingServiceImpl implements FirebaseMessagingService {
 			throw new DCException(ErrorCode.INTERNAL_SERVER_ERROR, ConstantsDC.PUSH_NOTIFICATION_SEND_FAIL);
 		}
 	}
+
+	@Override
+	public String sendTopicNotification(TopicNotificationRequestDto request) throws FirebaseMessagingException {
+		try {
+			Notification notification = Notification.builder().setTitle(request.getTitle())
+					.setBody(request.getMessage()).build();
+			Message message = Message.builder().setTopic(request.getTopic()).setNotification(notification).build();
+			return firebaseMessaging.send(message);
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			throw new DCException(ErrorCode.INTERNAL_SERVER_ERROR, ConstantsDC.PUSH_NOTIFICATION_SEND_FAIL);
+		}
+	}
+
+	@Override
+	public boolean subscribeToTopic(SubscriptionRequestDto request) throws FirebaseMessagingException {
+		try {
+			firebaseMessaging.subscribeToTopic(List.of(request.getSubscriber()), request.getTopic());
+			return true;
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			throw new DCException(ErrorCode.INTERNAL_SERVER_ERROR, ConstantsDC.TOPIC_SUBSCRIBED_FAIL);
+		}
+	}
+
 }
