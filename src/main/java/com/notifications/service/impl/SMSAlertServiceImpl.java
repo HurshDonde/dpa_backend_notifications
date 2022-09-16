@@ -1,4 +1,4 @@
-package com.notifications.services.Impl;
+package com.notifications.service.impl;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.notifications.entity.SmsAlertBody;
 import com.notifications.enums.ErrorCode;
 import com.notifications.exception.DCException;
-import com.notifications.serivices.SMSAlertService;
+import com.notifications.service.SMSAlertService;
 import com.notifications.utility.ConstantsDC;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;

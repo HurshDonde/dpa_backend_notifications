@@ -1,4 +1,4 @@
-package com.notifications.services.Impl;
+package com.notifications.service.impl;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import com.notifications.enums.ErrorCode;
 import com.notifications.exception.DCException;
 import com.notifications.request.dto.SubscriptionRequestDto;
 import com.notifications.request.dto.TopicNotificationRequestDto;
-import com.notifications.serivices.FirebaseMessagingService;
+import com.notifications.service.FirebaseMessagingService;
 import com.notifications.utility.ConstantsDC;
 
 import lombok.extern.slf4j.Slf4j;

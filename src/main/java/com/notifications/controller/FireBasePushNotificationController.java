@@ -11,7 +11,7 @@ import com.google.firebase.messaging.FirebaseMessagingException;
 import com.notifications.entity.Note;
 import com.notifications.request.dto.SubscriptionRequestDto;
 import com.notifications.request.dto.TopicNotificationRequestDto;
-import com.notifications.serivices.FirebaseMessagingService;
+import com.notifications.service.FirebaseMessagingService;
 import com.notifications.utility.ConstantsDC;
 import com.notifications.utility.DentalClinicsResponse;
 import com.notifications.utility.ResponseHelper;

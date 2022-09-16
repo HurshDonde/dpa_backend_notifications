@@ -1,4 +1,4 @@
-package com.notifications.services.Impl;
+package com.notifications.service.impl;
 
 import javax.mail.internet.MimeMessage;
 
@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.notifications.entity.EmailTemplate;
 import com.notifications.enums.ErrorCode;
 import com.notifications.exception.DCException;
-import com.notifications.serivices.EmailService;
+import com.notifications.service.EmailService;
 import com.notifications.utility.ConstantsDC;
 
 import lombok.extern.slf4j.Slf4j;
