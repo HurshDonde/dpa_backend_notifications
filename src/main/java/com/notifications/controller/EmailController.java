@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.notifications.entity.EmailTemplate;
-import com.notifications.serivices.EmailService;
+import com.notifications.service.EmailService;
 import com.notifications.utility.ConstantsDC;
 import com.notifications.utility.DentalClinicsResponse;
 import com.notifications.utility.ResponseHelper;

@@ -1,4 +1,4 @@
-package com.notifications.serivices;
+package com.notifications.service;
 
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
