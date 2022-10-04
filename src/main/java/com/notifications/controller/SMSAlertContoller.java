@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.notifications.entity.SmsAlertBody;
-import com.notifications.serivices.SMSAlertService;
+import com.notifications.service.SMSAlertService;
 import com.notifications.utility.ConstantsDC;
 import com.notifications.utility.DentalClinicsResponse;
 import com.notifications.utility.ResponseHelper;
